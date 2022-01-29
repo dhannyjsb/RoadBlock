@@ -39,15 +39,15 @@ public final class EventListener implements Listener {
 	private final PluginMain plugin;
 
 	// static set of entity target cancel reasons
-	private final Set<EntityTargetEvent.TargetReason> cancelReasons = Set.of(
+	private final Set<EntityTargetEvent.TargetReason> cancelReasons = Collections.unmodifiableSet(new HashSet<>(Arrays.asList(
 					EntityTargetEvent.TargetReason.CLOSEST_PLAYER,
 					EntityTargetEvent.TargetReason.RANDOM_TARGET,
-					EntityTargetEvent.TargetReason.UNKNOWN );
+					EntityTargetEvent.TargetReason.UNKNOWN )));
 
-	private final Set<String> pathMaterialNames = Set.of(
+	private final Set<String> pathMaterialNames = Collections.unmodifiableSet(new HashSet<>(Arrays.asList(
 			"GRASS_PATH",
 			"LEGACY_GRASS_PATH",
-			"DIRT_PATH" );
+			"DIRT_PATH" )));
 
 
 	/**
